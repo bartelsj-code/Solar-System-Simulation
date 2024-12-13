@@ -5,8 +5,14 @@
 
 using namespace std;
 
-Body::Body(string n, unsigned long long m, unsigned int r){
-    name = n;
-    mass = m;
-    radius = r;
+Body::Body(ProcessedData data){
+    id = data.id;
+    name = data.n;
+    mass = data.m;
+    radius = data.r;
+    satTo = data.st;
+};
+
+void Body::displayInfo(){
+    cout << id << ", name:" << name << ", mass: " << mass << "\n";
 };

@@ -7,11 +7,41 @@ using namespace std;
 
 
 
+
+
+struct ImportData{
+    int id;
+    string n;
+    double m;
+    int mm;
+    float p;
+    float a;
+    int dm;
+    int st;
+    double r;
+    int rm;
+};
+
+struct ProcessedData{
+    int id;
+    string n;
+    unsigned long long m;
+    unsigned int r;
+    int st;
+};
+
+ImportData infoToValues(string info);
+
+ProcessedData convertData(ImportData data);
+
 class Body {
     private:
-        string name;
-        unsigned long long mass;
-        unsigned int radius;
+        int id; //unique int for each body
+        string name; //name
+        unsigned long long mass; //mass (converted to gigatons)
+        unsigned int radius; //radius (for visuals)
+        int satTo; //body around which to orbit
+
 
         struct {
             long long x;
@@ -26,34 +56,14 @@ class Body {
         }   velocity;
 
     public:
-        Body(string n, unsigned long long m, unsigned int r);
+        Body(ProcessedData data);
         string repr(){return name;};
         string getName(){return name;};
         unsigned long long getMass(){return mass;};
-        unsigned int getRadius(){return radius;}
+        unsigned int getRadius(){return radius;};
+        void displayInfo();
 
 };
-
-struct ImportData{
-    string n;
-    double m;
-    int mm;
-    float p;
-    float a;
-    int dm;
-    double r;
-    int rm;
-};
-
-struct ProcessedData{
-    string n;
-    unsigned long long m;
-    unsigned int r;
-};
-
-ImportData infoToValues(string info);
-
-ProcessedData convertData(ImportData data);
 
 vector<Body> createBodies(string fileName, int massReduction);
 

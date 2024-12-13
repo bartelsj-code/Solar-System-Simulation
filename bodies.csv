@@ -1,3 +1,4 @@
-Name, Mass, Mass_Magnitude, perigee, apogee, distance_magnitude, radius, radius_magnitude
-"Sol", 1.988475, 30, 0, 0, 0, 6.957, 8
-"Earth", 5.9722, 24, 147, 153, 6, 6.378137, 3
+id, Name, Mass, Mass_Magnitude, perigee, apogee, distance_magnitude, satellite to, radius, radius_magnitude
+0, Sol, 1.988475, 30, 0, 0, 0, 0, 6.957, 8
+1, Earth, 5.9722, 24, 147, 153, 6, 0, 6.378137, 3
+2, #Moon, 7.349, 22, 362600, 405400, 0, 1, 1737.4, 0
