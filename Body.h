@@ -65,6 +65,6 @@ class Body {
 
 };
 
-vector<Body> createBodies(string fileName, int massReduction);
+vector<Body> createBodies(string fileName);
 
 #endif

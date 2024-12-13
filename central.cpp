@@ -7,7 +7,7 @@
 #include <vector>
 
 int main() {
-    vector<Body> bodies = createBodies("bodies.csv", massMultiplier);
+    vector<Body> bodies = createBodies("bodies.csv");
 
     Simulation sim(bodies);
     sim.displayBodies();

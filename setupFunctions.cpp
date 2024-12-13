@@ -6,6 +6,7 @@
 #include <vector>
 #include <sstream>
 #include <cmath>
+#include "physics.h"
 
 
 ImportData infoToValues(string info){
@@ -55,7 +56,7 @@ ImportData infoToValues(string info){
     return id;
 }
 
-ProcessedData convertData(ImportData data, int massReduction){
+ProcessedData convertData(ImportData data){
     ProcessedData out;
     out.id = data.id;
     out.n = data.n;
@@ -66,7 +67,7 @@ ProcessedData convertData(ImportData data, int massReduction){
 }
 
 
-vector<Body> createBodies(string fileName, int massReduction){
+vector<Body> createBodies(string fileName){
     vector<Body> bodies = {};
     //creates celestial bodies in accordance with input data
     string bodyInfo;
@@ -76,7 +77,7 @@ vector<Body> createBodies(string fileName, int massReduction){
     while (getline(File, bodyInfo)){
         if (bodyInfo[0] != '#'){
             ImportData bodyData = infoToValues(bodyInfo);
-            ProcessedData pData = convertData(bodyData, massReduction);
+            ProcessedData pData = convertData(bodyData);
             Body body(pData);
             bodies.push_back(body);
         }
