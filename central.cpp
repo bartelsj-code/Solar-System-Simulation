@@ -1,13 +1,17 @@
 #include "Body.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <fstream>
+#include <vector>
+
 
 int main() {
-    Body b = Body(7);
- 
-
-    int hi = b.getX();
-    std::cout << "Result: " << hi << std::endl;
-    return 0;
+    int massMultiplier = 12;  //convert masses from kg to gigatons
+    vector<Body> bodies = createBodies("bodies.csv", massMultiplier);   
     
+    for (int i = 0; i < 2; i++){
+        cout << bodies.at(i).getRadius() << "\n";
+    }
+
+    return 0;
 }
