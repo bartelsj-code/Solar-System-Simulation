@@ -28,6 +28,9 @@ struct ProcessedData{
     unsigned long long m;
     unsigned int r;
     int st;
+    unsigned long long a;
+    unsigned long long p;
+    
 };
 
 ImportData infoToValues(string info);
@@ -41,7 +44,8 @@ class Body {
         unsigned long long mass; //mass (converted to gigatons)
         unsigned int radius; //radius (for visuals)
         int satTo; //body around which to orbit
-
+        unsigned long long apogee;
+        unsigned long long perigee;
 
         struct {
             long long x;

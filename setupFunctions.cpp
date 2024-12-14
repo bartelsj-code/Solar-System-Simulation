@@ -63,6 +63,8 @@ ProcessedData convertData(ImportData data){
     out.m = data.m * pow(10, (data.mm - massReduction));
     out.r = data.r * pow(10, (data.rm));
     out.st = data.id;
+    out.a = data.a * pow(10, data.dm);
+    out.p = data.p * pow(10, data.dm);
     return out;
 }
 

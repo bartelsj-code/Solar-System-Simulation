@@ -8,11 +8,19 @@ using namespace std;
 
 Simulation::Simulation(vector<Body> b){
     bodies = b;
-    
 }
 
 void Simulation::displayBodies(){
     for (int i = 0; i < bodies.size(); i++){
         bodies.at(i).displayInfo();
-    };
+    }
+
+};
+
+void Simulation::calcPositions(){
+    for (int i = 0; i < bodies.size(); i++){
+        Body body = bodies.at(i);
+        body.displayInfo();
+
+    }
 };

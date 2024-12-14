@@ -2,3 +2,4 @@ id, Name, Mass, Mass_Magnitude, perigee, apogee, distance_magnitude, satellite t
 0, Sol, 1.988475, 30, 0, 0, 0, 0, 6.957, 8
 1, Earth, 5.9722, 24, 147, 153, 6, 0, 6.378137, 3
 #2, Moon, 7.349, 22, 362600, 405400, 0, 1, 1737.4, 0
+#3, Pluto, 1.3025, 22, 7375930, 4436820, 3, 0, 1188.3, 0

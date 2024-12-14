@@ -14,6 +14,9 @@ class Simulation{
     public:
         Simulation(vector<Body> b);
         void displayBodies();
+        void calcPositions();
+        
+        
 
 };
 
