@@ -8,15 +8,10 @@
 #include <cmath>
 #include "physics.h"
 
-
 ImportData infoToValues(string info){
     string holder;
     ImportData id;
     istringstream ss(info);
-
-    // id
-    getline(ss, holder, ',');
-    id.id = stoi(holder);
 
     // name
     getline(ss, id.n, ',');
@@ -42,8 +37,7 @@ ImportData infoToValues(string info){
     id.dm = stoi(holder);
 
     // satellite to
-    getline(ss, holder, ',');
-    id.st = stoi(holder);
+    getline(ss, id.so, ',');
 
     // radius
     getline(ss, holder, ',');
@@ -58,11 +52,11 @@ ImportData infoToValues(string info){
 
 ProcessedData convertData(ImportData data){
     ProcessedData out;
-    out.id = data.id;
+    // out.id = data.id;
     out.n = data.n;
     out.m = data.m * pow(10, (data.mm - massReduction));
     out.r = data.r * pow(10, (data.rm));
-    out.st = data.id;
+    out.so = data.so;
     out.a = data.a * pow(10, data.dm);
     out.p = data.p * pow(10, data.dm);
     return out;

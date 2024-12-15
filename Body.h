@@ -3,6 +3,8 @@
 
 #include <string>
 #include <vector>
+#include <array>
+
 using namespace std;
 
 
@@ -10,24 +12,24 @@ using namespace std;
 
 
 struct ImportData{
-    int id;
+    // int id;
     string n;
     double m;
     int mm;
     float p;
     float a;
     int dm;
-    int st;
+    string so;
     double r;
     int rm;
 };
 
 struct ProcessedData{
-    int id;
+    // int id;
     string n;
     unsigned long long m;
     unsigned int r;
-    int st;
+    string so;
     unsigned long long a;
     unsigned long long p;
     
@@ -39,11 +41,12 @@ ProcessedData convertData(ImportData data);
 
 class Body {
     private:
-        int id; //unique int for each body
+        //unique int for each body
+        // int id;
         string name; //name
         unsigned long long mass; //mass (converted to gigatons)
         unsigned int radius; //radius (for visuals)
-        int satTo; //body around which to orbit
+        string satOf; //body around which to orbit
         unsigned long long apogee;
         unsigned long long perigee;
 
@@ -60,13 +63,33 @@ class Body {
         }   velocity;
 
     public:
+        //getters
+        string getName(){return name;}
+        unsigned long long getMass(){return mass;}
+        unsigned int getRadius(){return radius;}
+        
+        string getSatOf(){return satOf;}
+        unsigned long long getAp(){return apogee;}
+        unsigned long long getPe(){return perigee;}
+
+        //setters
+        void setX(long long xVal){location.x = xVal;}
+        void setY(long long yVal){location.y = yVal;}
+        void setZ(long long zVal){location.z = zVal;}
+
+        void setPos(array<long long, 3> pos){location.x = pos[0]; location.y = pos[1]; location.z = pos[2];}
+
+        
         Body(ProcessedData data);
-        string repr(){return name;};
-        string getName(){return name;};
-        unsigned long long getMass(){return mass;};
-        unsigned int getRadius(){return radius;};
+
+        Body();
+        
+
         void displayInfo();
 
+        //
+        
+       
 };
 
 vector<Body> createBodies(string fileName);
