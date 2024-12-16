@@ -19,6 +19,7 @@ class Simulation{
         void displayBodies();
         void calcPositions();
         void displayBody(Body b);
+        void assignStart(Body b);
         
         
 

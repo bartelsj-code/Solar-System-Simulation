@@ -37,7 +37,11 @@ ImportData infoToValues(string info){
     id.dm = stoi(holder);
 
     // satellite to
-    getline(ss, id.so, ',');
+    getline(ss, holder, ',');
+
+    size_t temp = holder.find_first_not_of(" ");
+    holder = holder.substr(temp);
+    id.so = holder;
 
     // radius
     getline(ss, holder, ',');

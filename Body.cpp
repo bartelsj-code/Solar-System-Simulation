@@ -16,5 +16,5 @@ Body::Body(ProcessedData data){
 Body::Body(){};
 
 void Body::displayInfo(){
-    cout << ", name:" << name << ", mass: " << mass << "\n";
+    cout << "name:" << name << ", mass: " << mass << "\n";
 };
