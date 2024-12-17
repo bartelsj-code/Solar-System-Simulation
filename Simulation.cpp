@@ -39,7 +39,7 @@ void Simulation::displayBodies(){
 
 void Simulation::displayBody(Body body){
     string nameOfSatOf = body.getSatOf();
-    Loc loc = body.getLoc();
+    // Loc loc = body.getLoc();
     cout << body.getName() << ":\n" 
         << "\tmass:           " << sciNo(to_string(body.getMass())) << " " << massUnit << "\n"
         << "\tradius:         " << sciNo(to_string(body.getRadius())) << " km" << "\n"
@@ -47,20 +47,25 @@ void Simulation::displayBody(Body body){
             << "\t\tsatellite of:   " << nameOfSatOf << "\n"
             << "\t\tApogee: " << sciNo(to_string(body.getAp())) << " km" << "\n"
             << "\t\tPerigee: " << sciNo(to_string(body.getPe())) << " km" << "\n";
-            // << "\t\t\tPos: " << loc.x << ", " << to_string(loc.y) << ", " << to_string(loc.z) << "\n\n";
+            // << "\t\t\tPos: " << loc.x << ", " << loc.y << ", " << loc.z << "\n\n";
 }
 
-// void Simulation::assignStart(Body b){
-//     Body satOf = bodiesM.at(b.getSatOf());
-
-
-//     displayBody(satOf);
-// }
+void Simulation::assignStart(Body b){
+    // bodiesM.at(b.getSatOf())->setX(50);
+    // bo->setX(0);
+    // bo->setY(10);
+    // bo->setZ(100);
+    // Loc rfLoc = satOf.getLoc();
+    // // cout  << rfLoc.x << "\n";
+    // // rfLoc.setX(50);
+    // cout  << rfLoc.x << "\n";
+    
+}
 
 void Simulation::calcPositions(){
     displayBodies();
     for (int i = 0; i < bodiesV.size(); i++){
-  
-        // assignStart(bodiesV.at(i));
+        assignStart(*bodiesV.at(i));
     }
+    displayBodies();
 }

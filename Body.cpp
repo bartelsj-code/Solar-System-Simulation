@@ -13,7 +13,7 @@ Body::Body(ProcessedData data){
     perigee = data.p;
 };
 
-Body::Body(){cout << "gotcha\n";};
+// Body::Body(){cout << "gotcha\n";};
 
 void Body::displayInfo(){
     cout << "name:" << name << ", mass: " << mass << "\n";
