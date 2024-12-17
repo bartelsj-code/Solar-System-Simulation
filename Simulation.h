@@ -5,17 +5,22 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <sstream>
+#include <memory>
+#include <fstream>
+
 
 
 class Simulation{
     private:
-        std::vector<Body> bodiesV;
-        std::map<string, Body> bodiesM;
+        vector<shared_ptr<Body>> bodiesV;
+        map<string, shared_ptr<Body>> bodiesM;
+    
         int massUnitReduction;
 
 
     public:
-        Simulation(vector<Body> b);
+        Simulation(string fileName);
         void displayBodies();
         void calcPositions();
         void displayBody(Body b);

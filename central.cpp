@@ -8,9 +8,9 @@
 
 int main() {
     //setup
-    vector<Body> bodiesV = createBodies("bodies.csv");
-    Simulation sim(bodiesV);
-    // sim.displayBodies();
+    // vector<Body> bodiesV = createBodies("bodies.csv");
+    Simulation sim("bodies.csv");
+    // // sim.displayBodies();
     sim.calcPositions();
 
 

@@ -4,9 +4,10 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <sstream>
+
 #include <cmath>
 #include "physics.h"
+#include <memory>
 
 ImportData infoToValues(string info){
     string holder;
@@ -67,24 +68,25 @@ ProcessedData convertData(ImportData data){
 }
 
 
-vector<Body> createBodies(string fileName){
-    vector<Body> bodies = {};
-    //creates celestial bodies in accordance with input data
-    string bodyInfo;
-    ifstream File(fileName);
-    getline(File, bodyInfo);
+// vector<shared_ptr<Bodies>> createBodies(string fileName){
+    
+//     // creates celestial bodies in accordance with input data
+//     string bodyInfo;
+//     ifstream File(fileName);
+//     getline(File, bodyInfo);
      
-    while (getline(File, bodyInfo)){
-        if (bodyInfo[0] != '#'){
-            ImportData bodyData = infoToValues(bodyInfo);
-            ProcessedData pData = convertData(bodyData);
-            Body body(pData);
-            bodies.push_back(body);
-        }
-    }    
+//     while (getline(File, bodyInfo)){
+//         if (bodyInfo[0] != '#'){
+//             ImportData bodyData = infoToValues(bodyInfo);
+//             ProcessedData pData = convertData(bodyData);
+//             Body body(pData);
+//             bodies.push_back(body);
+//         }
+//     }    
 
-    File.close();
-    return bodies;
+    
+//     return bodies;
 
 
-}
+
+// }
