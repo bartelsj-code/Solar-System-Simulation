@@ -12,14 +12,13 @@ class Loc{
         long long x;
         long long y;
         long long z; 
-        void setX(long long xIn){x = xIn;}
 };
 
 class Vel{
-    
-    double x;
-    double y;
-    double z;
+    public:
+        double x;
+        double y;
+        double z;
 };
 
 struct ImportData{
@@ -58,11 +57,15 @@ class Body {
         string satOf; //body around which to orbit
         unsigned long long apogee;
         unsigned long long perigee;
-        Loc* location; //x, y, z
-        Vel* velocity;
+
+        
+        
 
 
     public:
+        Loc* location; //x, y, z
+        Vel* velocity;
+
         //getters
         string getName(){return name;}
         unsigned long long getMass(){return mass;}
@@ -72,16 +75,7 @@ class Body {
         unsigned long long getAp(){return apogee;}
         unsigned long long getPe(){return perigee;}
 
-        // Loc getLoc(){return location;}
-        // Vel getVel(){return velocity;}
-
-        //setters
-        void setX(long long xVal){location->x = xVal;}
-        void setY(long long yVal){location->y = yVal;}
-        void setZ(long long zVal){location->z = zVal;}
-
-        // void setLoc(Loc l){location = l;}
-        // void setVel(Vel v){velocity = v;}
+    
 
         
         Body(ProcessedData data);

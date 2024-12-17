@@ -37,6 +37,14 @@ void Simulation::displayBodies(){
     }
 }
 
+Body Simulation::getBody(string s){
+    return *bodiesM[s];
+}
+
+Body Simulation::getBody(int i){
+    return *bodiesV.at(i);
+}
+
 void Simulation::displayBody(Body body){
     string nameOfSatOf = body.getSatOf();
     // Loc loc = body.getLoc();
@@ -51,14 +59,7 @@ void Simulation::displayBody(Body body){
 }
 
 void Simulation::assignStart(Body b){
-    // bodiesM.at(b.getSatOf())->setX(50);
-    // bo->setX(0);
-    // bo->setY(10);
-    // bo->setZ(100);
-    // Loc rfLoc = satOf.getLoc();
-    // // cout  << rfLoc.x << "\n";
-    // // rfLoc.setX(50);
-    // cout  << rfLoc.x << "\n";
+    
     
 }
 
